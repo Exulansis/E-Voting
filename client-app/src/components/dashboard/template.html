@@ -1,0 +1,8 @@
+<div class="dashboard">
+  <ol>
+    <li v-for="candidate in candidates">
+      <button v-on:click='vote(candidate.id)'> {{ candidate.name }} </button>
+    </li>
+  </ol>
+  <h1> </h1>
+</div>

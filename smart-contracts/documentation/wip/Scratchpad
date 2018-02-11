@@ -1,0 +1,12 @@
+Option a:
+
+Votes = Vote[]
+mapping (mnemonic -> voteId)
+mapping (bytes32 -> hash)
+
+Vote = {
+    mnemonic
+    votedFor
+}
+
+Benefits -> No need to link to next / prev element, no need to store many hashes

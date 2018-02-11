@@ -1,0 +1,317 @@
+{
+  "contract_name": "Ballot",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_candidateId",
+          "type": "uint8"
+        }
+      ],
+      "name": "getCandidateById",
+      "outputs": [
+        {
+          "name": "candidateId",
+          "type": "uint8"
+        },
+        {
+          "name": "totalVotes",
+          "type": "uint16"
+        },
+        {
+          "name": "candidateName",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "stopBallot",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_displayName",
+          "type": "bytes32"
+        }
+      ],
+      "name": "addCandidate",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_mnemonic",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getVoteByMnemonic",
+      "outputs": [
+        {
+          "name": "index",
+          "type": "uint256"
+        },
+        {
+          "name": "mnemonic",
+          "type": "bytes32"
+        },
+        {
+          "name": "candidateId",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "startBallot",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getNrOfCandidates",
+      "outputs": [
+        {
+          "name": "nr",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_mnemHash",
+          "type": "bytes32"
+        },
+        {
+          "name": "_candidateId",
+          "type": "uint8"
+        }
+      ],
+      "name": "vote",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_passportHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "registerPassportHash",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "_stationAddress",
+          "type": "address"
+        }
+      ],
+      "name": "wasStationRegistered",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_stationAddresses",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "eventType",
+          "type": "uint8"
+        }
+      ],
+      "name": "EventNotification",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b6040516108493803806108498339810160405280805190910190505b60008082511161003a57600080fd5b60008054600160a060020a03191633600160a060020a03161781555b6000805460ff92909216740100000000000000000000000000000000000000000260a060020a60ff021990921691909117815590505b81518110156100e15760018060008484815181106100a657fe5b90602001906020020151600160a060020a031681526020810191909152604001600020805460ff19169115159190911790555b60010161008c565b5b50505b610755806100f46000396000f300606060405236156100955763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416629d5826811461009a5780631719d726146100de578063230d6ed8146100f3578063428117df1461010b578063452ddecc14610148578063a927c5641461015d578063c9a28cb914610182578063cf3890c5146101a0578063ecd4aace146101b8575b600080fd5b34156100a557600080fd5b6100b360ff600435166101f8565b60405160ff909316835261ffff90911660208301526040808301919091526060909101905180910390f35b34156100e957600080fd5b6100f1610289565b005b34156100fe57600080fd5b6100f16004356102c4565b005b341561011657600080fd5b610121600435610392565b604051928352602083019190915260ff166040808301919091526060909101905180910390f35b341561015357600080fd5b6100f1610425565b005b341561016857600080fd5b61017061048d565b60405190815260200160405180910390f35b341561018d57600080fd5b6100f160043560ff60243516610497565b005b34156101ab57600080fd5b6100f160043561057b565b005b34156101c357600080fd5b6101e473ffffffffffffffffffffffffffffffffffffffff60043516610604565b604051901515815260200160405180910390f35b600080600060048460ff1681548110151561020f57fe5b906000526020600020906003020160005b50546004805460ff92831692871690811061023757fe5b906000526020600020906003020160005b50600201546004805461ffff9092169160ff881690811061026557fe5b906000526020600020906003020160005b50600101549250925092505b9193909250565b60015b60005460a060020a900460ff16146102a357600080fd5b60025b600060146101000a81548160ff021916908360ff1602179055505b5b565b600080543373ffffffffffffffffffffffffffffffffffffffff9081169116146102ed57600080fd5b60005b60005460a060020a900460ff161461030757600080fd5b506004805490816001810161031c8382610633565b916000526020600020906003020160005b6060604051908101604090815260ff86168252602082018790526000908201529190508151815460ff191660ff91909116178155602082015160018201556040820151600291909101805461ffff191661ffff90921691909117905550505b5b5b5050565b600080600061039f610665565b60008581526003602052604090205460058054909161ffff169081106103c157fe5b906000526020600020906003020160005b5060606040519081016040908152825461ffff1682526001830154602083015260029092015460ff1691810191909152905080518160200151826040015161ffff9092169550935091505b509193909250565b6000543373ffffffffffffffffffffffffffffffffffffffff90811691161461044d57600080fd5b60005b60005460a060020a900460ff161461046757600080fd5b60016102a6565b600060146101000a81548160ff021916908360ff1602179055505b5b5b565b60045460ff165b90565b600580549081600181016104ab8382610685565b916000526020600020906003020160005b6060604051908101604090815261ffff861682526020820188905260ff8716908201529190508151815461ffff191661ffff91909116178155602082015160018201556040820151600291909101805460ff191660ff90921691909117905550506004805461ffff831690811061052f57fe5b906000526020600020906003020160005b50600201805461ffff19808216600161ffff93841601831617909255600085815260036020526040902080549092169083161790555b505050565b60015b60005460a060020a900460ff161461059557600080fd5b73ffffffffffffffffffffffffffffffffffffffff331660009081526001602052604090205460ff1615156105c957600080fd5b60008181526002602052604090205460ff16156105e557600080fd5b6000818152600260205260409020805460ff191660011790555b5b5b50565b73ffffffffffffffffffffffffffffffffffffffff811660009081526001602052604090205460ff165b919050565b8154818355818115116105765760030281600302836000526020600020918201910161057691906106b7565b5b505050565b606060405190810160409081526000808352602083018190529082015290565b8154818355818115116105765760030281600302836000526020600020918201910161057691906106f0565b5b505050565b61049491905b808211156106e957805460ff191681556000600182015560028101805461ffff191690556003016106bd565b5090565b90565b61049491905b808211156106e957805461ffff191681556000600182015560028101805460ff191690556003016106f6565b5090565b905600a165627a7a72305820bc1bb7bb4784d63fc389bce8a953abb822cc9ba6351fc0502b05701e7ff2dec20029",
+  "networks": {
+    "1504981141209": {
+      "events": {},
+      "links": {},
+      "address": "0x58ecb9abe409373da7957ccec5c0b2934e5a9bab",
+      "updated_at": 1504981635327
+    },
+    "1505040642032": {
+      "events": {
+        "0x2595250736f4d32e1560b490ce3d208ace961956789d64cff9df51dca5846d35": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eventType",
+              "type": "uint8"
+            }
+          ],
+          "name": "EventNotification",
+          "type": "event"
+        },
+        "0xabbe7657b43f582864e3267d4d152a42f4756aed3a3d806dfe463be3e2822369": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "condition",
+              "type": "bool"
+            }
+          ],
+          "name": "DebugEvent",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xe438f82319ee8904f90f6e82aef49c6c50912c1f",
+      "updated_at": 1505040951633
+    },
+    "1505067392327": {
+      "events": {
+        "0x2595250736f4d32e1560b490ce3d208ace961956789d64cff9df51dca5846d35": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eventType",
+              "type": "uint8"
+            }
+          ],
+          "name": "EventNotification",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x3fb61e058379b2b33265d555084ec616d0cec215",
+      "updated_at": 1505072580873
+    },
+    "1506283057336": {
+      "events": {
+        "0x2595250736f4d32e1560b490ce3d208ace961956789d64cff9df51dca5846d35": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eventType",
+              "type": "uint8"
+            }
+          ],
+          "name": "EventNotification",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xc4b48901af7891d83ce83877e1f8fb4c81a94907",
+      "updated_at": 1506283629941
+    },
+    "1506284967915": {
+      "events": {
+        "0x2595250736f4d32e1560b490ce3d208ace961956789d64cff9df51dca5846d35": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eventType",
+              "type": "uint8"
+            }
+          ],
+          "name": "EventNotification",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xc4b48901af7891d83ce83877e1f8fb4c81a94907",
+      "updated_at": 1506284973984
+    },
+    "1506361564560": {
+      "events": {
+        "0x2595250736f4d32e1560b490ce3d208ace961956789d64cff9df51dca5846d35": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "eventType",
+              "type": "uint8"
+            }
+          ],
+          "name": "EventNotification",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0xb4eccaeb64c731ddf6bd28bb7f7247340f208aa6",
+      "updated_at": 1506368792560
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1508585038005
+}

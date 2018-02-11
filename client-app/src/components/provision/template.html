@@ -1,0 +1,12 @@
+<div class="provision">
+  <div>
+    <h1> Please introduce the contract address :</h1>
+    <input :value="contractAddress" @input="updateAddress"> </input>
+    <button 
+      v-bind:class="{ 'valid': validateString(), 'invalid': !validateString()}" 
+      v-on:click="submit"
+    >
+    Confirm
+    </button>
+  </div>
+</div>

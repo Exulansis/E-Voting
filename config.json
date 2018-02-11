@@ -1,0 +1,8 @@
+{
+  "dev": "true",
+  "addresses": {
+    "stations": ["0x1", "0x2", "0x3"],
+    "admin": "0xab7fcaeb4dfcc37309f7370438f0710713dbbcbe"
+  },
+  "candidates": ["John", "Sam", "Michael"]
+}

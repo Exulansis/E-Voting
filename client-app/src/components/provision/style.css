@@ -1,0 +1,26 @@
+.valid {
+  background-color: #82ffc2;
+}
+
+.invalid {
+  background-color: #ff8282;
+}
+
+.provision h1 {
+  margin: 0;
+  padding: 15px;
+  width: 100%;
+}
+
+.provision button {
+  margin: auto;
+  padding: 15px;
+}
+
+.provision input {
+  border-width: 0;
+  border: none;
+  padding: 15px;
+  width: 100%;
+  font-size: 3em;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "eVoting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init": "npm run testrpc & npm run deploy",
+    "testrpc": "cd ./smart-contracts && npm run testrpc > ../logs/testrpc.log",
+    "deploy": "cd ./smart-contracts && truffle migrate > ../logs/migration.log",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "pkill npm"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
